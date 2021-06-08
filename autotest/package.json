@@ -5,7 +5,11 @@
   "main": "protractor.config.js",
   "scripts": {
     "webdriver": "webdriver-manager update --gecko=false",
-    "e2e": "protractor protractor.config.js"
+    "e2e": "protractor protractor.config.js",
+    "e2e-serve": "lite-server -c bs-config.json",
+    "instrument": "gulp instrument",
+    "test": "forever stopall",
+    "e2e-smoke": "npm run instrument && forever stopall && forever start node_modules/gulp/bin/gulp.js start && protractor-flake --parser standard --max-attempts=3 -- protractor.config.js && forever stopall && gulp report"
   },
   "license": "ISC",
   "devDependencies": {
@@ -40,5 +44,15 @@
     "tslint": "5.20.1",
     "typescript": "3.5.3",
     "webdriver-manager": "12.1.8"
+  },
+  "dependencies": {
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "gulp-run-command": "0.0.10",
+    "istanbul": "0.4.5",
+    "jasmine-allure-reporter": "1.0.2",
+    "lite-server": "2.6.1",
+    "nyc": "15.1.0",
+    "protractor-beautiful-reporter": "1.3.6"
   }
 }

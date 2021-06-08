@@ -7,7 +7,10 @@
 autotest/doc/download
 autotest/doc/reporter
 autotest/package-lock.json
-
+autotest/coverage-output
+autotest/allure-results
+autotest/dist
+autotest/.nyc_output
 # annotation-app
 
 
