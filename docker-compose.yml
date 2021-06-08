@@ -1,15 +1,15 @@
 version: '2'
 services:
-  annotation-app:
-    build: ./annotation-app
-    container_name: app
-    image: annotation-app
-    depends_on:
-      - annotation-service
-    ports:
-      - "4200:5000"
-    networks:
-      - bridge
+#   annotation-app:
+#     build: ./annotation-app
+#     container_name: app
+#     image: annotation-app
+#     depends_on:
+#       - annotation-service
+#     ports:
+#       - "4200:5000"
+#     networks:
+#       - bridge
       
   annotation-service:
     build: ./annotation-service
