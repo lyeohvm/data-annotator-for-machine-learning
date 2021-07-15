@@ -14,10 +14,12 @@ services:
   annotation-service:
     build: 
       context: ./annotation-service
-      args:
-        MONGODB_URL: 'mongodb://mo/daml'
+#      args:
+#        MONGODB_URL: 'mongodb://mo/daml'
     container_name: service
     image: annotation-service
+    environment:
+      MONGODB_URL: ${MONGODB_URL}        
     depends_on:
       - mongo
     ports:
