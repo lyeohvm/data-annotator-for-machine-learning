@@ -12,7 +12,8 @@ services:
 #       - bridge
       
   annotation-service:
-    build: ./annotation-service
+    build: 
+      context: ./annotation-service
       args:
         MONGODB_URL: 'mongodb://mo/daml'
     container_name: service
