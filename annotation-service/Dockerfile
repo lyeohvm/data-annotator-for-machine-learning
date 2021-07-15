@@ -1,6 +1,8 @@
 # Create image based on the official Node 6 image from the dockerhub
 FROM node:12-alpine
 
+ENV MONGODB_URL=$MONGODB_URL
+
 COPY package.json .
 
 RUN npm i && mkdir /app && cp -R ./node_modules ./app
