@@ -14,8 +14,6 @@ services:
   annotation-service:
     build: 
       context: ./annotation-service
-#      args:
-#        MONGODB_URL: 'mongodb://mo/daml'
     container_name: service
     image: annotation-service
     environment:
@@ -27,16 +25,18 @@ services:
     networks:
       - bridge
   
-#   active-learning-service:
-#     build: ./active-learning-service
-#     container_name: active
-#     image: active-learning-service
-#     depends_on:
-#       - mongo
-#     ports:
-#       - "8000:8000"
-#     networks:
-#       - bridge
+  active-learning-service:
+    build: ./active-learning-service
+    container_name: active
+    image: active-learning-service
+    environment:
+      LOOP_AL_URL: ${LOOP_AL_URL} 
+    depends_on:
+      - mongo
+    ports:
+      - "8000:8000"
+    networks:
+      - bridge
 
   mongo:
     image: mongo:3.6.4
