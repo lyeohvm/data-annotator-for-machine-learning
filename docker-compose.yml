@@ -17,7 +17,8 @@ services:
     container_name: service
     image: annotation-service
     environment:
-      MONGODB_URL: ${MONGODB_URL}        
+      MONGODB_URL: ${MONGODB_URL}
+      LOOP_AL_URL: ${LOOP_AL_URL}         
     depends_on:
       - mongo
     ports:
@@ -29,8 +30,6 @@ services:
     build: ./active-learning-service
     container_name: active
     image: active-learning-service
-    environment:
-      LOOP_AL_URL: ${LOOP_AL_URL} 
     depends_on:
       - mongo
     ports:
