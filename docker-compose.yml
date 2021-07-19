@@ -30,6 +30,8 @@ services:
     build: ./active-learning-service
     container_name: active
     image: active-learning-service
+    environment:
+      MONGODB_URL: ${MONGODB_URL}
     depends_on:
       - mongo
     ports:
