@@ -21,6 +21,7 @@ services:
       LOOP_AL_URL: ${LOOP_AL_URL}         
     depends_on:
       - mongo
+      - active-learning-service
     ports:
       - "3000:3000"
     networks:
