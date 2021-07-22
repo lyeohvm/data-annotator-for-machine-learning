@@ -148,7 +148,7 @@ jobs:
             -Dsonar.projectKey=${{ env.SONAR_ORG }}-DAML-annotation-app
             -Dsonar.typescript.lcov.reportPaths="../coverage-output/lcov.info" 
             -Dsonar.test.exclusions=**/node_modules/**/*,**/models/**/*,**/downloadProject/**/*,**/logs/**/*,**/venv/**/*,**/__pycache__/**/*,*.md,*.txt,*.yml
-            -Dsonar.coverage.exclusions=src/app/components/admin/admin.component.ts,src/app/components/authentication/authentication.component.ts,src/app/components/projects/supercollider.component.ts,src/app/components/login/login.component.ts,src/environments/environent.prod.ts,src/libs/feedback.js,src/libs/modelChart.js
+            -Dsonar.coverage.exclusions=src/app/components/admin/admin.component.ts,src/app/components/authentication/authentication.component.ts,src/app/components/projects/supercollider.component.ts,src/app/components/login/login.component.ts,src/environments/environment.prod.ts,src/libs/feedback.js,src/libs/modelChart.js,src/main.ts
             -Dsonar.verbose=true 
             -Dsonar.c.file.suffixes=- 
             -Dsonar.cpp.file.suffixes=- 
